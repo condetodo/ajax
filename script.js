@@ -117,16 +117,15 @@ const getPosition = function () {
   });
 };
 
-getPosition().then(pos => console.log(pos));
+// getPosition().then(pos => console.log(pos));
 
 const whereAmI = function () {
   getPosition()
     .then(pos => {
       const { lattitude: lat, longitude: lng } = pos.coords;
-
       // return fetch(`https://geocode.xyz/${lat},${lng}?geoit=json`);
       return fetch(
-        `https://geocode.xyz/[request]&auth=417767929046498664951x5180/${lat},${lng}?geoit=json`
+        `https://geocode.xyz/${lat},${lng}?geoit=json&auth=417767929046498664951x5180`
       );
     })
 
